@@ -1,1 +1,21 @@
+markdown
+# Contributing Guide
+Thank you for your interest in contributing to this open-source project!
 
+## How to Contribute
+1. Fork this repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
+
+## Contribution Rules
+- Follow unified code style and specification
+- Update documents synchronously for new functions
+- No invalid or malicious submission
+- All contributions will be manually reviewed by the primary maintainer
+
+## Issue Rules
+- Use official templates to submit bugs and feature requests
+- Describe problems clearly and completely
+- Avoid duplicate and invalid issues
