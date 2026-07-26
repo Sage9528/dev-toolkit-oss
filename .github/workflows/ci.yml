@@ -1,1 +1,41 @@
+yaml
+name: CI Pipeline
 
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository code
+        uses: actions/checkout@v4
+
+      - name: Setup Node environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies (auto skip if none)
+        run: |
+          if [ -f package.json ]; then npm ci --ignore-scripts; fi
+
+      - name: Code lint check (auto skip)
+        run: |
+          if grep -q "lint" package.json 2>/dev/null; then npm run lint; fi
+
+      - name: Build project (auto skip)
+        run: |
+          if grep -q "build" package.json 2>/dev/null; then npm run build; fi
+
+      - name: Unit test (auto skip)
+        run: |
+          if grep -q "test" package.json 2>/dev/null; then npm test; fi
