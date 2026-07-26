@@ -1,1 +1,11 @@
+markdown
+# Security Policy
+## Supported Versions
+This project is continuously maintained and updated. We always fix potential security vulnerabilities in the latest version.
 
+## Vulnerability Reporting
+If you find any security risks or vulnerabilities, please do not disclose them publicly.
+Please contact the maintainer through GitHub private message with detailed vulnerability information.
+
+## Repair Mechanism
+We will respond within 48 hours, verify the problem, fix vulnerabilities and release updated versions to ensure project security.
